@@ -29,6 +29,7 @@ public class GregTech6Reborn
 
         NeoForge.EVENT_BUS.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        RegBlocks.register(modEventBus);
     }
     
     @SubscribeEvent
