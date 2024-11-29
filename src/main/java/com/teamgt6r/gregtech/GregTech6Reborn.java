@@ -4,6 +4,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
+import com.teamgt6r.gregtech.blocks.test.RegBlocks;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -27,9 +28,9 @@ public class GregTech6Reborn
  
     public GregTech6Reborn(IEventBus modEventBus, ModContainer modContainer) {
 
+        modEventBus.register(new RegBlocks());
         NeoForge.EVENT_BUS.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
-        RegBlocks.register(modEventBus);
     }
     
     @SubscribeEvent
