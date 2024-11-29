@@ -17,13 +17,15 @@ public class RegBlocks{
     event.register(
     		BuiltInRegistries.BLOCK.key(),
     		registry -> {
-    			registry.register(
-    					ResourceLocation.fromNamespaceAndPath(GregTech6Reborn.MODID, "b1"),
+    			for(int i=1;i<=8;i++) {
+    				registry.register(
+    					ResourceLocation.fromNamespaceAndPath(GregTech6Reborn.MODID, "b"+Integer.toString(i)),
     					new Block(BlockBehaviour.Properties.of()
     				      //.setId(ResourceKey.create(Registries.BLOCK,registryName))
     				      .destroyTime(2.0f)
     				      .explosionResistance(10.0f)
-    				      .sound(SoundType.GRAVEL)));
+    				      .sound(SoundType.STONE)));
+    			}
     		}
     );
   }
